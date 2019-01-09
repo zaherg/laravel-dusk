@@ -2,7 +2,7 @@
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/zaherg/laravel-dusk.svg)](https://hub.docker.com/r/zaherg/laravel-dusk/) [![](https://images.microbadger.com/badges/image/zaherg/laravel-dusk.svg)](https://microbadger.com/images/zaherg/laravel-dusk "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/zaherg/laravel-dusk.svg)](https://microbadger.com/images/zaherg/laravel-dusk "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/commit/zaherg/laravel-dusk.svg)](https://microbadger.com/images/zaherg/laravel-dusk "Get your own commit badge on microbadger.com")  [![](https://img.shields.io/github/last-commit/linuxjuggler/laravel-dusk.svg)](https://github.com/linuxjuggler/laravel-dusk)
 
-This is a simple PHP 7.x image with Composer and xDebug, which contain just the minimum required to run Laravel Dusk a CI.
+PHP 7.x image with Composer and xDebug, contains just the minimum required to run Dusk on a CI.
 So you should use it as the __base__ for your custom image. 
 
 
