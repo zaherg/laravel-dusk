@@ -35,6 +35,6 @@ RUN apt-get update && apt-get install -y -q --no-install-recommends git libsodiu
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
 
-COPY conf.d/xdebug.ini /usr/local/etc/php/conf.d/xdebug-dev.ini
+COPY ./7.3/conf.d/xdebug.ini /usr/local/etc/php/conf.d/xdebug-dev.ini
 
 RUN Xvfb -ac :0 -screen 0 1280x1024x16 &
