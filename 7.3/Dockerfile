@@ -4,7 +4,7 @@ ARG BUILD_DATE
 ARG VCS_REF
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
-LABEL Maintainer="Zaher Ghaibeh <z@zah.me>" \
+LABEL Maintainer="Zaher Ghaibeh <zaher@zah.me>" \
       Description="A simple PHP 7.3 image which contain just the minimum required to run Dusk on bitbucket pipelines." \
       org.label-schema.name="zaherg/laravel-dusk:7.3" \
       org.label-schema.description="A simple PHP 7.3 image which contain just the minimum required to run Dusk on bitbucket pipelines." \

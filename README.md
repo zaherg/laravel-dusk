@@ -11,6 +11,7 @@ So you should use it as the __base__ for your custom image.
 1. zaherg/laravel-dusk:latest
 2. zaherg/laravel-dusk:7.2
 3. zaherg/laravel-dusk:7.3
+3. zaherg/laravel-dusk:7.4
 
 
 ## Duck configuration:
@@ -67,7 +68,7 @@ docker run --env-file .env zaherg/laravel-dusk:<version>
 
 ## Bitbucket Pipeline Example
 
-You can read more about it from this post [https://zah.me/2018/02/03/running-laravel-dusk-tests-on-bitbucket-the-easy-way/](https://zah.me/2018/02/03/running-laravel-dusk-tests-on-bitbucket-the-easy-way/)
+You can read more about it from this post [https://zah.me/blog/2018/02/03/running-laravel-dusk-tests-on-bitbucket-the-easy-way/](https://zah.me/blog/2018/02/03/running-laravel-dusk-tests-on-bitbucket-the-easy-way/)
 
 
 This is just an example, the content of the file `.env.dusk` is not different that `.env.example` except that
