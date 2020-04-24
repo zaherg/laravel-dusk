@@ -1,11 +1,13 @@
-FROM php:7.2
+ARG PHP_VERSION
+
+FROM php:${PHP_VERSION}
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 LABEL Maintainer="Zaher Ghaibeh <zaher@zah.me>" \
-      Description="A simple PHP 7.2 image which contain just the minimum required to run Dusk on bitbucket pipelines." \
-      org.label-schema.name="zaherg/laravel-dusk:7.2" \
-      org.label-schema.description="A simple PHP 7.2 image which contain just the minimum required to run Dusk on bitbucket pipelines." \
+      Description="A simple PHP ${PHP_VERSION} image which contain just the minimum required to run Dusk on bitbucket pipelines." \
+      org.label-schema.name="zaherg/laravel-dusk:${PHP_VERSION}" \
+      org.label-schema.description="A simple PHP ${PHP_VERSION} image which contain just the minimum required to run Dusk on bitbucket pipelines." \
       org.label-schema.vcs-url="https://github.com/linuxjuggler/laravel-dusk" \
       org.label-schema.schema-version="1.0.0"
 
@@ -20,7 +22,6 @@ ENV COMPOSER_ALLOW_SUPERUSER 1 \
     PHP_XDEBUG_PROFILER_ENABLE ${PHP_XDEBUG_PROFILER_ENABLE:-0} \
     PHP_XDEBUG_PROFILER_OUTPUT_DIR ${PHP_XDEBUG_PROFILER_OUTPUT_DIR:-"/tmp"}
 
-
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
@@ -28,8 +29,11 @@ COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 RUN apt-get update && apt-get install -y -q --no-install-recommends git libsodium-dev unzip zlib1g-dev \
     libxpm4 libxrender1 libgtk2.0-0 libnss3 libgconf-2-4 chromium xvfb gtk2-engines-pixbuf xfonts-cyrillic \
     xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable imagemagick x11-apps libicu-dev libzip-dev \
+    && mkdir /src && cd /src && git clone https://github.com/xdebug/xdebug.git \
+    && cd xdebug \
+    && sh ./rebuild.sh \
     && docker-php-source extract \
-    && pecl install redis libsodium xdebug \
+    && pecl install redis libsodium \
     && docker-php-ext-enable xdebug redis \
     && docker-php-source delete \
     && docker-php-ext-install -j"$(nproc)" pdo pdo_mysql intl zip \

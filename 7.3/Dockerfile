@@ -22,6 +22,8 @@ ENV COMPOSER_ALLOW_SUPERUSER 1 \
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
+COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+
 RUN apt-get update && apt-get install -y -q --no-install-recommends git libsodium-dev unzip zlib1g-dev \
     libxpm4 libxrender1 libgtk2.0-0 libnss3 libgconf-2-4 chromium xvfb gtk2-engines-pixbuf xfonts-cyrillic \
     xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable imagemagick x11-apps libicu-dev libzip-dev \
@@ -33,7 +35,6 @@ RUN apt-get update && apt-get install -y -q --no-install-recommends git libsodiu
     && docker-php-ext-enable xdebug redis \
     && docker-php-source delete \
     && docker-php-ext-install -j"$(nproc)" pdo pdo_mysql intl zip \
-    && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
 
