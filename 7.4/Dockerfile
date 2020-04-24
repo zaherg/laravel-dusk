@@ -1,17 +1,12 @@
 FROM php:7.4
 
-ARG BUILD_DATE
-ARG VCS_REF
-
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 LABEL Maintainer="Zaher Ghaibeh <zaher@zah.me>" \
       Description="A simple PHP 7.4 image which contain just the minimum required to run Dusk on bitbucket pipelines." \
       org.label-schema.name="zaherg/laravel-dusk:7.4" \
       org.label-schema.description="A simple PHP 7.4 image which contain just the minimum required to run Dusk on bitbucket pipelines." \
-      org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-url="https://github.com/linuxjuggler/laravel-dusk" \
-      org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.schema-version="1.0.0"
 
 ENV COMPOSER_ALLOW_SUPERUSER 1 \
