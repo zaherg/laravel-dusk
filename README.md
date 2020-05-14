@@ -1,6 +1,8 @@
 # PHP image to run laravel dusk tests
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/zaherg/laravel-dusk.svg)](https://hub.docker.com/r/zaherg/laravel-dusk/) [![](https://images.microbadger.com/badges/image/zaherg/laravel-dusk.svg)](https://microbadger.com/images/zaherg/laravel-dusk "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/zaherg/laravel-dusk.svg)](https://microbadger.com/images/zaherg/laravel-dusk "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/commit/zaherg/laravel-dusk.svg)](https://microbadger.com/images/zaherg/laravel-dusk "Get your own commit badge on microbadger.com")  [![](https://img.shields.io/github/last-commit/linuxjuggler/laravel-dusk.svg)](https://github.com/linuxjuggler/laravel-dusk)
+[![Docker Pulls](https://img.shields.io/docker/pulls/zaherg/laravel-dusk.svg)](https://hub.docker.com/r/zaherg/laravel-dusk/) [![](https://images.microbadger.com/badges/image/zaherg/laravel-dusk.svg)](https://microbadger.com/images/zaherg/laravel-dusk "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/zaherg/laravel-dusk.svg)](https://microbadger.com/images/zaherg/laravel-dusk "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/commit/zaherg/laravel-dusk.svg)](https://microbadger.com/images/zaherg/laravel-dusk "Get your own commit badge on microbadger.com")  [![](https://img.shields.io/github/last-commit/zaherg/laravel-dusk.svg)](https://github.com/zaherg/laravel-dusk) [![](https://img.shields.io/badge/sponsor-using%20BTC%20lightning%20network-blue.svg)](https://tippin.me/@zaherg)
+
+
 
 PHP 7.x image with Composer and xDebug, contains just the minimum required to run Dusk on a CI.
 So you should use it as the __base__ for your custom image. 
